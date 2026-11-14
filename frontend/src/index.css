@@ -1,0 +1,355 @@
+:root {
+  --primary: #1d6fb8;
+  --primary-dark: #15548c;
+  --primary-soft: #e8f1fa;
+  --ink: #1d2733;
+  --muted: #64707d;
+  --border: #dde3ea;
+  --bg: #f4f6f9;
+  --success-bg: #e7f6ec;
+  --success-ink: #1e6b3a;
+  --error-bg: #fdecec;
+  --error-ink: #a12a2a;
+  font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+/* En-tête */
+.site-header {
+  background: white;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.brand p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Mise en page : réservation à gauche, agenda à droite */
+.layout {
+  max-width: 1120px;
+  margin: 24px auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+}
+
+.panel {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 8px 24px 24px;
+}
+
+.panel h2 {
+  font-size: 1.05rem;
+  margin: 22px 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.step {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  font-size: 0.85rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* Praticiens */
+.practitioners {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  text-align: left;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: white;
+  padding: 12px 14px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.card:hover {
+  border-color: var(--primary);
+}
+
+.card.selected {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.card-name {
+  font-weight: 600;
+}
+
+.card-specialty {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Date et créneaux */
+.date-field {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.date-field label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.date-field input {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.slot-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.slot-label {
+  width: 90px;
+  flex-shrink: 0;
+  padding-top: 7px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.slot {
+  min-width: 70px;
+  padding: 7px 10px;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  background: white;
+  color: var(--primary-dark);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.slot:hover:not(:disabled) {
+  background: var(--primary-soft);
+}
+
+.slot.selected,
+.slot.selected:hover:not(:disabled) {
+  background: var(--primary);
+  color: white;
+}
+
+.slot:disabled {
+  border-color: var(--border);
+  color: #a7b0ba;
+  background: #f1f3f6;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+/* Formulaire */
+.booking-form {
+  display: grid;
+  gap: 12px;
+  max-width: 460px;
+}
+
+.recap {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--primary-soft);
+}
+
+.booking-form label {
+  display: grid;
+  gap: 4px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.booking-form input {
+  padding: 9px 11px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-weight: 400;
+}
+
+.booking-form input:focus,
+.date-field input:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+
+.primary {
+  justify-self: start;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--primary-dark);
+}
+
+.primary:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.error {
+  margin: 0;
+  color: var(--error-ink);
+}
+
+/* Messages */
+.notice {
+  margin-top: 16px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.notice.success {
+  background: var(--success-bg);
+  color: var(--success-ink);
+}
+
+.notice.error {
+  background: var(--error-bg);
+  color: var(--error-ink);
+}
+
+.close {
+  border: none;
+  background: none;
+  color: inherit;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* Agenda */
+.agenda {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.agenda li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.agenda-time {
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.agenda-patient {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.agenda-patient small {
+  color: var(--muted);
+}
+
+.link-button {
+  border: none;
+  background: none;
+  color: var(--error-ink);
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.hint {
+  margin: 16px 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.site-footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  padding: 8px 24px 32px;
+}
+
+/* Petits écrans : une seule colonne */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

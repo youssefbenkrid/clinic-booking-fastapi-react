@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+backend/clinic.db
+
+# Node
+node_modules/
+dist/
+
+# Éditeurs et système
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,6 @@
+fastapi==0.162.7
+uvicorn[standard]==0.54.0
+SQLAlchemy==2.1.8
+pydantic[email]==2.14.3
+pytest==9.2.0
+httpx2==2.16.0
