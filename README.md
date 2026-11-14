@@ -59,6 +59,8 @@ python -m venv .venv
 
 Sous macOS ou Linux, remplacer `.venv\Scripts\python` par `.venv/bin/python`. Au premier lancement, l'API crée la base SQLite `clinic.db` et ajoute les trois praticiens.
 
+Sous Windows, si `python` n'est pas reconnu, remplacez la deuxième commande par `py -m venv .venv`.
+
 **2. L'interface** (dans un second terminal)
 
 ```
